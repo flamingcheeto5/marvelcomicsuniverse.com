@@ -1,5 +1,5 @@
 <?php
-define('DB_HOST', 'localhost');
+define('DB_HOST', '50.62.160.227');
 define('DB_NAME', 'cit336-test');
 define('DB_USER','cit336');
 define('DB_PASSWORD','cit336');
