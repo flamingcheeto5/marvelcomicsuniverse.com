@@ -23,12 +23,16 @@
                                 <li>
                     <a href='../views/origin-stories.php' style="color:white">Origin Stories</a>
                 </li>
+				<br>
                                 <li>
                     <a href='../model/contact.php' style="color:white">Contact</a>
                 </li>
                                 <li>
                     <a href='../model/login.php' style="color:white">Log In</a>
                 </li>
+				<li> 
+					<a style="color: white;" href="../index1.php">Shopping Cart</a> 
+				</li>
 			</ul>
 		</nav>
       </div>

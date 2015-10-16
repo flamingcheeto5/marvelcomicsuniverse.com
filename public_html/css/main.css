@@ -2,6 +2,8 @@
 CSS David Banks
 */
 
+* {margin: 0; padding: 0;}
+ 
 #container {
     height: 350px;
     overflow: hidden;
@@ -445,6 +447,5 @@ input[type=password]:focus
     body {
         width: 400px;
     }
-
 
 }
