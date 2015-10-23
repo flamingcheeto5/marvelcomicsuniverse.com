@@ -27,8 +27,10 @@
 <head>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="css/reset.css" />
+	<script type="text/javascript" src="javascript/main-js.js"></script>
+        <link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/style.css" />
+        
 
 	
 	<title>Shopping Cart</title>
