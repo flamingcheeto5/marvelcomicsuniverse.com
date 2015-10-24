@@ -30,9 +30,15 @@
                                 <li>
                     <a href='../model/login.php' style="color:white">Log In</a>
                 </li>
-				<li> 
-					<a style="color: white;" href="../index1.php">Shopping Cart</a> 
-				</li>
+		
+                <li> 
+                    <a style="color: white;" href="../index1.php">Buy Comics</a> 
+		</li>
+                
+                <li> 
+                    <a style="color: white;" href="../pricing.html">Buy Movies</a> 
+                </li>
+                                
 			</ul>
 		</nav>
       </div>
