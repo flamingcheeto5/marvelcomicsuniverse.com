@@ -112,14 +112,14 @@ function calculateTotal()
 {
     //Here we get the total price by calling our function
     //Each function returns a number so by calling them we add the values they return together
-    var cakePrice = getMovieSelectionPrice() + getMediaPrice() + shippingPrice() + internationalShipping();
+    var moviePrice = getMovieSelectionPrice() + getMediaPrice() + shippingPrice() + internationalShipping();
 
 
     
     //display the result
     var divobj = document.getElementById('totalPrice');
     divobj.style.display='block';
-    divobj.innerHTML = "Total Price For the Movie $"+cakePrice;
+    divobj.innerHTML = "Total Price For the Movie $"+moviePrice;
 
 }
 
