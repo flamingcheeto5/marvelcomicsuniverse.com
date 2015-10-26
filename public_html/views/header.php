@@ -28,7 +28,7 @@
                     <a href='../model/contact.php' style="color:white">Contact</a>
                 </li>
                                 <li>
-                    <a href='../model/login.php' style="color:white">Log In</a>
+                    <a href='../model/login.html' style="color:white">Log In</a>
                 </li>
 		
                 <li> 
