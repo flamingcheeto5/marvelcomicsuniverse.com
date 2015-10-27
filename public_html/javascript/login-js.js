@@ -1,32 +1,32 @@
-function SaveItem() {
+function SaveUsernamePassword() {
 			
-	var name = document.forms.ShoppingList.name.value;
-	var data = document.forms.ShoppingList.data.value;
+	var name = document.forms.UserPass.name.value;
+	var data = document.forms.UserPass.data.value;
 	localStorage.setItem(name, data);
-	doShowAll();
+	combineFunctions();
 	
 }
 
-function ModifyItem() {
-	var name = document.forms.ShoppingList.name.value;
-	document.forms.ShoppingList.data.value = localStorage.getItem(name);
-	doShowAll();
+function ModifyUsernamePassword() {
+	var name = document.forms.UserPass.name.value;
+	document.forms.UserPass.data.value = localStorage.getItem(name);
+	combineFunctions();
 }
 
-function RemoveItem() {
-	var name = document.forms.ShoppingList.name.value;
-	document.forms.ShoppingList.data.value = localStorage.removeItem(name);
-	doShowAll();
+function RemoveUsernamePassword() {
+	var name = document.forms.UserPass.name.value;
+	document.forms.UserPass.data.value = localStorage.removeItem(name);
+	combineFunctions();
 }
 
 function ClearAll() {
 	localStorage.clear();
-	doShowAll();
+	combineFunctions();
 }
 
 // dynamically draw the table
 
-function doShowAll() {
+function combineFunctions() {
 	if (CheckBrowser()) {
 		var key = "";
 		var list = "<tr><th>Name</th><th>Value</th></tr>\n";
@@ -41,21 +41,10 @@ function doShowAll() {
 		}
 		document.getElementById('list').innerHTML = list;
 	} else {
-		alert('Cannot store shopping list as your browser do not support local storage');
+		alert('Cannot store username and password information as your browser do not support local storage');
 	}
 }
 
-/*
- * Checking the browser compatibility.
- * 
- * Alternately can use Modernizr scripts- JavaScript library that helps us to
- * detect the browser support for HTML5 and CSS features Example - <script
- * type="text/javascript" src="modernizr.min.js"></script>
- * 
- * if (Modernizr.localstorage) { //use localStorage object to store data } else {
- * alert('Cannot store user preferences as your browser do not support local
- * storage'); }
- */
 function CheckBrowser() {
 	if ('localStorage' in window && window['localStorage'] !== null) {
 		// we can use localStorage object to store data

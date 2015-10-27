@@ -1,13 +1,27 @@
 td,th {
 	font-family: monospace;
 	padding: 4px;
-	background-color: #ccc;
+}
+
+
+form label {
+    float:left; 
+    text-align: right;
+    width: 150px;
 }
 
 label {
-	vertical-align: top;
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
 }
 
+input{
+    display: inline-block;
+    float: left;
+}
 #PlayArea {
 	border: 1px dotted blue;
 	padding: 6px;
@@ -17,9 +31,11 @@ label {
 
 #items_table {
 	border: 1px dotted blue;
-	padding: 6px;
-	margin-top: 12px;
+	padding: auto;
+	margin-top: 10px ;
+        margin-bottom: 100px;
 	margin-right: 50%;
+        background-color: #ccc;
 }
 
 #items_table h2 {
