@@ -7,11 +7,11 @@ function SaveUsernamePassword() {
 	
 }
 
-function ModifyUsernamePassword() {
-	var name = document.forms.UserPass.name.value;
-	document.forms.UserPass.data.value = localStorage.getItem(name);
-	combineFunctions();
-}
+// function ModifyUsernamePassword() {
+//	var name = document.forms.UserPass.name.value;
+//	document.forms.UserPass.data.value = localStorage.getItem(name);
+//	combineFunctions();
+// }
 
 function RemoveUsernamePassword() {
 	var name = document.forms.UserPass.name.value;
@@ -36,7 +36,7 @@ function combineFunctions() {
 			list += "<tr><td>" + key + "</td>\n<td>"
 					+ localStorage.getItem(key) + "</td></tr>\n";
 		}
-		if (list == "<tr><th>Name</th><th>Value</th></tr>\n") {
+		if (list === "<tr><th>Name</th><th>Value</th></tr>\n") {
 			list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
 		}
 		document.getElementById('list').innerHTML = list;

@@ -123,6 +123,13 @@ function calculateTotal()
 
 }
 
+function submitButton() 
+{
+    // Sumbit button display 
+    window.alert("Thanks for your order!");
+    location.reload(true);
+    }
+
 function hideTotal()
 {
     var divobj = document.getElementById('totalPrice');
