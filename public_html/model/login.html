@@ -1,68 +1,62 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-us">
 <head>
-<title>Login Information Page</title>
-<meta charset="UTF-8">
-<script src="../javascript/login-js.js"></script>
+<!-- JSON EXAMPLE 2  -->
+<meta charset="utf-8">
+<title>JSON Log-in Example</title>
 <link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" src="../javascript/login-js.js"></script>
+
 </head>
-<body onload="combineFunctions()">
+
+<body>
 <div id="header"> 
   <div id="banner">&nbsp;
   </div> <nav> 
     <ul> 
-      <li> <a style="color: white;" href="../index.html">Home</a> </li> 
-      <li> <a style="color: white;" href="../views/movies.php">Cinematic Universe</a> </li> 
-      <li> <a style="color: white;" href="../views/origin-stories.php">Origin Stories</a> </li>
-		<br/>
-      <li> <a style="color: white;" href="../model/contact.php">Contact</a> </li> 
-      <li> <a style="color: white;" href="../model/login.html">Log In</a> </li>
-      <li> <a style="color: white;" href="../index1.php">Buy Comics</a> </li>
-      <li> <a style="color: white;" href="../pricing.html">Buy Movies</a> </li>
+      <li> <a style="color: white;" href="index.html">Home</a> </li> 
+      <li> <a style="color: white;" href="views/movies.php">Cinematic Universe</a> </li> 
+      <li> <a style="color: white;" href="views/origin-stories.php">Origin Stories</a> </li>
+		<br>
+      <li> <a style="color: white;" href="model/contact.php">Contact</a> </li> 
+      <li> <a style="color: white;" href="model/login.html">Log In</a> </li>
+      <li> <a style="color: white;" href="index1.php">Buy Comics</a> </li>
+      <li> <a style="color: white;" href="pricing.html">Buy Movies</a> </li>
     </ul> </nav> 
-</div>
+</div> 
 
-    <br/><br/><br/><br/>
+    <br>
+    <br>
+    <div id="container">
+        <div id="input">
+            <p>Please input values for your exercises.</p>
     
-    <form name=UserPass>
-            
-		<div id="PlayArea">
-            <h2>Create an Account</h2>        
-                    <label>Username: </label><input type=text name=name>
-                    <br/><br/>
-                    <label>Password: </label><input type=text name=data>
-<br/><br/><br/>
-                        <table>
-				<tr>
-					<td>
-					    <input type=button value="Save"   onclick="SaveUsernamePassword()">
-                                            <br/><br/>
-					  <!---  <input type=button value="Modify" onclick="ModifyUsernamePassword()"> 
-                                            <br/><br/> --->
-					    <input type=button value="Remove" onclick="RemoveUsernamePassword()">
-					  </td>
-				</tr>
-			</table>
-                                  
-                                
-		</div>
- 
-		<div id="items_table">
-			<h2>Username and Password list</h2>
-			<table id=list></table>
-			<p>
-				<label><input type=button value="Clear" onclick="ClearAll()">
-					<i>* Removes all username and passwords</i></label>
-			</p>
-		</div>
-	</form>
-<footer> 
-  <p> <a style="color: white;" href="../model/teaching-presentation.php">Teaching Presentation</a>&nbsp;&nbsp;
-            <a style="color: white;" href="../model/site-plan.php">Site Plan</a>&nbsp;&nbsp;
-			<a style="color: white;" href="../model/sources.php">Sources</a>&nbsp;&nbsp;
-            <a style="color: white;" href="../model/source-code.php">Source Code</a>&nbsp;&nbsp;
-			<a style="color: white;" href="../admin/login.html">Admin Console</a> </p> 
+            <p>Username: <input type="text" id="username"></p>
+            <p>Password: <input type="text" id="password"></p>
+            <button type = "button" onClick = "saveDataInLS()">Save User Info</button>
+        </div>
+        
+        <div id="history" onClick="zoomIn()">
+            <table id=output></table>
+        </div>  
+        
+    </div>
+<br>
+<br>
+<button class="wiggle" type = "button" onClick = "doShowAll()">Show User List</button>
+
+<p></p>
+<p>
+    <label><input type=button value="Clear" onclick="ClearAll()">
+    <i>* Removes all items</i></label>
+</p>
+    <footer> 
+  <p> <a style="color: white;" href="model/teaching-presentation.php">Teaching Presentation</a>&nbsp;&nbsp;
+            <a style="color: white;" href="model/site-plan.php">Site Plan</a>&nbsp;&nbsp;
+			<a style="color: white;" href="model/sources.php">Sources</a>&nbsp;&nbsp;
+            <a style="color: white;" href="model/source-code.php">Source Code</a>&nbsp;&nbsp;
+			<a style="color: white;" href="admin/login.html">Admin Console</a> </p> 
   <p style="color: white;">			 BYU-I CIT 336<br />               David Banks    
         </p> <br /> </footer> 
 </body>

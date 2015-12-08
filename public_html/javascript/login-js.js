@@ -1,55 +1,60 @@
-function SaveUsernamePassword() {
-			
-	var name = document.forms.UserPass.name.value;
-	var data = document.forms.UserPass.data.value;
-	localStorage.setItem(name, data);
-	combineFunctions();
-	
+   // Save 
+    function saveDataInLS(){
+    var obj={};
+        obj.username=document.getElementById('username').value;
+        obj.password=document.getElementById('password').value;
+
+    var listObj=localStorage.getItem('DATA');
+    if(listObj!=null){
+      listObj=JSON.parse(listObj); //this will give array of object
+      listObj.push(obj);
+    }else{
+      listObj=[obj]; //first time 
+    }
+   // Save Data in Local Storage 
+    localStorage.setItem('DATA',JSON.stringify(listObj)); 
+   
 }
 
-// function ModifyUsernamePassword() {
-//	var name = document.forms.UserPass.name.value;
-//	document.forms.UserPass.data.value = localStorage.getItem(name);
-//	combineFunctions();
-// }
-
-function RemoveUsernamePassword() {
-	var name = document.forms.UserPass.name.value;
-	document.forms.UserPass.data.value = localStorage.removeItem(name);
-	combineFunctions();
-}
-
-function ClearAll() {
-	localStorage.clear();
-	combineFunctions();
-}
-
-// dynamically draw the table
-
-function combineFunctions() {
+function doShowAll() {
 	if (CheckBrowser()) {
-		var key = "";
-		var list = "<tr><th>Name</th><th>Value</th></tr>\n";
-		var i = 0;
-		for (i = 0; i <= localStorage.length - 1; i++) {
-			key = localStorage.key(i);
-			list += "<tr><td>" + key + "</td>\n<td>"
-					+ localStorage.getItem(key) + "</td></tr>\n";
-		}
-		if (list === "<tr><th>Name</th><th>Value</th></tr>\n") {
-			list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
-		}
-		document.getElementById('list').innerHTML = list;
-	} else {
-		alert('Cannot store username and password information as your browser do not support local storage');
+		var dataArr= localStorage.getItem('DATA');
+                dataArr=JSON.parse(dataArr);//returns Array
+                var results = "";
+                var i = 0;
+                for (i=0; i<=dataArr.length - 1; i++) {
+                    var username, password;
+                    username = dataArr[i]['username'];
+                    password = dataArr[i]['password'];
+                    squats = dataArr[i]['squats'];          
+                    results += "<tr><th>Week " + (i + 1) + "</th><th> </th></tr>\n\
+                                <tr><td>Username:</td>\n<td>" + username + 
+                                "</td></tr>\n<tr><td>Password:</td>\n<td>"
+                                + password +
+                                "</td></tr>\n";
+                    
+                }
+                //below is an example of DOM replace
+                var container = document.getElementById("container");
+                var old = document.getElementById("input");
+                var newdiv = document.getElementById("history");
+                container.replaceChild(newdiv, old);
+                document.getElementById('output').innerHTML = results;
+           } else {
+		alert('Local Storage is supported in your browser!');
 	}
 }
 
 function CheckBrowser() {
 	if ('localStorage' in window && window['localStorage'] !== null) {
-		// we can use localStorage object to store data
+		// localStorage object to stores data
 		return true;
 	} else {
 			return false;
 	}
+}
+
+function ClearAll() {
+	localStorage.clear();
+	doShowAll();
 }

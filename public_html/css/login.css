@@ -1,45 +1,33 @@
 td,th {
 	font-family: monospace;
 	padding: 4px;
-}
-
-
-form label {
-    float:left; 
-    text-align: right;
-    width: 150px;
+	background-color: green;
 }
 
 label {
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-    text-align: right;
+	vertical-align: top;
 }
 
-input{
-    display: inline-block;
-    float: left;
-}
 #PlayArea {
 	border: 1px dotted blue;
 	padding: 6px;
-	background-color: #ccc;
+	background-color: green;
 	margin-right: 50%;
 }
 
 #items_table {
 	border: 1px dotted blue;
-	padding: auto;
-	margin-top: 10px ;
-        margin-bottom: 100px;
+	padding: 6px;
+	margin-top: 12px;
 	margin-right: 50%;
-        background-color: #ccc;
 }
 
 #items_table h2 {
 	font-size: 18px;
 	margin-top: 0px;
 	font-family: sans-serif;
+}
+
+body {
+    color: white;
 }

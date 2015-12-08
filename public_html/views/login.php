@@ -4,46 +4,37 @@ include ('header.php');
 
 ?>
 <br><br>
-<div id="movie-trailer">
-<fieldset style="width:30%"><legend style="color:white">LOG-IN HERE</legend>
-<form method="POST" action="connectivity.php">
-<p style="color:white">
-User<br><input type="text" name="user" size="40">
+<head>
+<!-- JSON EXAMPLE 2  -->
+<meta charset="utf-8">
+<title>JSON Log-in Example</title>
+<link rel="stylesheet" href="/styles/ShoppingList.css">
+<script type="text/javascript" src="javascript/login-js.js"></script>
 
-<br><br>
+</head>
+<body>
+    <div id="container">
+        <div id="input">
+            <p>Please input values for your exercises.</p>
+    
+            <p>Username: <input type="text" id="username"></p>
+            <p>Password: <input type="text" id="password"></p>
+            <button type = "button" onClick = "saveDataInLS()">Save User Info</button>
+        </div>
+        
+            <table id=output></table>
+        </div>          
+<br>
+<br>
+<button class="wiggle" type = "button" onClick = "doShowAll()">Show User List</button>
 
-Password<br><input type="password" name="pass" size="40">
+<p></p>
+<p>
+    <label><input type=button value="Clear" onclick="ClearAll()">
+    <i>* Removes all items</i></label>
 </p>
-<input class="button" type="submit" name="submit" value="Log-In">
-<br><br>
-</form>
-</fieldset>
-</div>
-
-
-<fieldset style="width:30%"><legend style="color:white">Registration Form</legend>
-<form method="POST" action="connectivity-sign-up.php">
-<p style="color:white">
-Full Name<input type="text" name="name">
-<br><br>
-Email<input type="text" name="email">
-<br><br>
-UserName<input type="text" name="user">
-<br><br>
-Password<input type="password" name="pass">
-<br><br>
-Confirm Password<input type="password" name="cpass">
-</p>
-<input class="button" type="submit" name="submit" value="Sign-Up">
-</form>
-
-
-</fieldset>
-
-
-
-
-
+    
+</body>
 
 <?php
 include ('footer.php');
