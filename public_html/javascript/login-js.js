@@ -1,22 +1,20 @@
-function showHint(str) {
-  var xhttp;
-  if (str.length == 0) { 
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById("txtHint").innerHTML = xhttp.responseText;
+function shUsers(str) {
+    if (str.length === 0) {
+        document.getElementById("usrAry").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                document.getElementById("usrAry").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET", "getusername.php?u=" + str, true);
+        xmlhttp.send();
     }
-  };
-  xhttp.open("GET", "gethint.php?q="+str, true);
-  xhttp.send();   
 }
-
-
 // Save 
-    function saveDataInLS(){
+    function saveUsrPass(){
     var obj={};
         obj.username=document.getElementById('username').value;
         obj.password=document.getElementById('password').value;
@@ -35,7 +33,7 @@ function showHint(str) {
 
 
 
-function doShowAll() {
+function showUsrPass() {
 	if (CheckBrowser()) {
 		var dataArr= localStorage.getItem('DATA');
                 dataArr=JSON.parse(dataArr);//returns Array
@@ -44,8 +42,7 @@ function doShowAll() {
                 for (i=0; i<=dataArr.length - 1; i++) {
                     var username, password;
                     username = dataArr[i]['username'];
-                    password = dataArr[i]['password'];
-                    squats = dataArr[i]['squats'];          
+                    password = dataArr[i]['password'];       
                     results += "<tr><th></th><th> </th></tr>\n\
                                 <tr><td>Username:</td>\n<td>" + username + 
                                 "</td></tr>\n<tr><td>Password:</td>\n<td>"
@@ -75,5 +72,5 @@ function CheckBrowser() {
 
 function ClearAll() {
 	localStorage.clear();
-	doShowAll();
+	showUsrPass();
 }

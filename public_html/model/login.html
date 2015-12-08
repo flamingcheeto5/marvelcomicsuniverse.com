@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <html lang="en-us">
 <head>
 <!-- JSON EXAMPLE 2  -->
@@ -15,35 +14,39 @@
   <div id="banner">&nbsp;
   </div> <nav> 
     <ul> 
-      <li> <a style="color: white;" href="../index.html">Home</a> </li> 
-      <li> <a style="color: white;" href="../views/movies.php">Cinematic Universe</a> </li> 
-      <li> <a style="color: white;" href="../views/origin-stories.php">Origin Stories</a> </li>
+      <li> <a style="color: white;" href="index.html">Home</a> </li> 
+      <li> <a style="color: white;" href="views/movies.php">Cinematic Universe</a> </li> 
+      <li> <a style="color: white;" href="views/origin-stories.php">Origin Stories</a> </li>
 		<br>
-      <li> <a style="color: white;" href="../model/contact.php">Contact</a> </li> 
-      <li> <a style="color: white;" href="../model/login.html">Log In</a> </li>
-      <li> <a style="color: white;" href="../index1.php">Buy Comics</a> </li>
-      <li> <a style="color: white;" href="../pricing.html">Buy Movies</a> </li>
+      <li> <a style="color: white;" href="model/contact.php">Contact</a> </li> 
+      <li> <a style="color: white;" href="model/login.html">Log In</a> </li>
+      <li> <a style="color: white;" href="index1.php">Buy Comics</a> </li>
+      <li> <a style="color: white;" href="pricing.html">Buy Movies</a> </li>
     </ul> </nav> 
 </div> 
 
     <br>
     <br>
     
-<h3>Start typing a name in the input field below:</h3>
+<p><b>Search usernames:</b></p>
+<form>
+Search: <input type="text" onkeyup="shUsers(this.value)">
 
-<form action=""> 
-First name: <input type="text" id="txt1" onkeyup="showHint(this.value)">
 </form>
-
-<p>Suggestions: <span id="txtHint"></span></p>     
+<p>Results: <span id="usrAry"></span></p>    
+    
+    
+    
+    <br>
+    <br>
     <div id="container">
         <div id="input">
-            <p>Please input values for your exercises.</p>
+            <p>Create Username and Password:</p>
     
             <p>Username: <input type="text" id="username"></p>
             <br>
             <p>Password: <input type="text" id="password"></p>
-            <button type = "button" onClick = "saveDataInLS()">Save User Info</button>
+            <button type = "button" onClick = "saveUsrPass()">Save User Info</button>
         </div>
         
         <div id="history" onClick="zoomIn()">
@@ -53,12 +56,12 @@ First name: <input type="text" id="txt1" onkeyup="showHint(this.value)">
     </div>
 <br>
 <br>
-<button class="wiggle" type = "button" onClick = "doShowAll()">Show User List</button>
+<button type = "button" onClick = "showUsrPass()">Show User List</button>
 
 <p></p>
 <p>
     <label><input type=button value="Clear" onclick="ClearAll()">
-    <i>* Removes all items</i></label>
+    <i>Clears local storage</i></label>
 </p>
     <footer> 
   <p> <a style="color: white;" href="model/teaching-presentation.php">Teaching Presentation</a>&nbsp;&nbsp;
