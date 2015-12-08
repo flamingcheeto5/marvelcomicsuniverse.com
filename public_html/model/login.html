@@ -15,24 +15,33 @@
   <div id="banner">&nbsp;
   </div> <nav> 
     <ul> 
-      <li> <a style="color: white;" href="index.html">Home</a> </li> 
-      <li> <a style="color: white;" href="views/movies.php">Cinematic Universe</a> </li> 
-      <li> <a style="color: white;" href="views/origin-stories.php">Origin Stories</a> </li>
+      <li> <a style="color: white;" href="../index.html">Home</a> </li> 
+      <li> <a style="color: white;" href="../views/movies.php">Cinematic Universe</a> </li> 
+      <li> <a style="color: white;" href="../views/origin-stories.php">Origin Stories</a> </li>
 		<br>
-      <li> <a style="color: white;" href="model/contact.php">Contact</a> </li> 
-      <li> <a style="color: white;" href="model/login.html">Log In</a> </li>
-      <li> <a style="color: white;" href="index1.php">Buy Comics</a> </li>
-      <li> <a style="color: white;" href="pricing.html">Buy Movies</a> </li>
+      <li> <a style="color: white;" href="../model/contact.php">Contact</a> </li> 
+      <li> <a style="color: white;" href="../model/login.html">Log In</a> </li>
+      <li> <a style="color: white;" href="../index1.php">Buy Comics</a> </li>
+      <li> <a style="color: white;" href="../pricing.html">Buy Movies</a> </li>
     </ul> </nav> 
 </div> 
 
     <br>
     <br>
+    
+<h3>Start typing a name in the input field below:</h3>
+
+<form action=""> 
+First name: <input type="text" id="txt1" onkeyup="showHint(this.value)">
+</form>
+
+<p>Suggestions: <span id="txtHint"></span></p>     
     <div id="container">
         <div id="input">
             <p>Please input values for your exercises.</p>
     
             <p>Username: <input type="text" id="username"></p>
+            <br>
             <p>Password: <input type="text" id="password"></p>
             <button type = "button" onClick = "saveDataInLS()">Save User Info</button>
         </div>

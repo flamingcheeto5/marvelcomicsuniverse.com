@@ -1,4 +1,21 @@
-   // Save 
+function showHint(str) {
+  var xhttp;
+  if (str.length == 0) { 
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      document.getElementById("txtHint").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "gethint.php?q="+str, true);
+  xhttp.send();   
+}
+
+
+// Save 
     function saveDataInLS(){
     var obj={};
         obj.username=document.getElementById('username').value;
@@ -16,6 +33,8 @@
    
 }
 
+
+
 function doShowAll() {
 	if (CheckBrowser()) {
 		var dataArr= localStorage.getItem('DATA');
@@ -27,7 +46,7 @@ function doShowAll() {
                     username = dataArr[i]['username'];
                     password = dataArr[i]['password'];
                     squats = dataArr[i]['squats'];          
-                    results += "<tr><th>Week " + (i + 1) + "</th><th> </th></tr>\n\
+                    results += "<tr><th></th><th> </th></tr>\n\
                                 <tr><td>Username:</td>\n<td>" + username + 
                                 "</td></tr>\n<tr><td>Password:</td>\n<td>"
                                 + password +
